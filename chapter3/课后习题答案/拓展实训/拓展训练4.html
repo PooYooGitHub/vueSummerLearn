@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展训练3</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model="content" v-on:keyup.115="fun(content)"/>
+    </div>   
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                content:''
+            },
+            methods:{
+                fun:function(data){
+                    alert('录入内容为：'+data)
+                    this.content=''
+                }
+            }
+        });
+    </script>
+</body>
+</html>

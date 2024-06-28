@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展训练4</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{height | addIcon(unit)}}</p>
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            height:170,
+            unit:"（cm）"
+        },
+        filters:{
+            //处理函数
+            addIcon(value1,value2){
+                return '身高' + value1 + value2;
+            }
+        }
+    })
+    </script>
+</body>
+</html>

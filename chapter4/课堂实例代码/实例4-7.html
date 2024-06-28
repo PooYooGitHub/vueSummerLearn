@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src=".//lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <counter></counter>
+    <hr/>
+    <counter></counter>
+</div>
+<template id="tmp1">
+    <div>
+        <input type="button" value="+1" @click="add">
+        {{ count }}
+        <input type="button" value="-1" @click="sub">
+    </div>
+</template>
+<script>
+    Vue.component('counter',{
+        template:'#tmp1',
+        data:function () {
+            return { count:0}
+        },
+        methods:{
+            add(){
+                this.count++
+            },
+            sub(){
+                this.count--
+            }
+        }
+    })
+    var vm=new Vue({el:'#app'})
+</script>
+</body>
+</html>

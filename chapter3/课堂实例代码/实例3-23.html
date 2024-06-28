@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <!--1.定义一个列表，渲染到页面上
+    2.添加新的列表项
+    3.删除指定列表项
+    4.搜索-->
+</head>
+<body>
+<div id="app">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加学生</h3>
+        </div>
+        <div class="panel-body form-inline">
+            <label>
+                Id:
+                <input type="text" class="form-control" v-model="id">
+            </label>
+
+            <label>
+                Name:
+                <input type="text" class="form-control" v-model="name">
+            </label>
+
+            <input type="button" value="添加" class="btn btn-primary" @click="add">
+
+            <label>
+                搜索名称关键字：
+                <input type="text" class="form-control" v-model="keywords">
+            </label>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Ctime</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="user in search(keywords)" :key="user.id">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.ctime | newTime}}</td>
+            <td><a href="" @click.prevent="del(user.id)">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    //定义一个全局过滤器，将ctime过滤为yyyy-mm-dd
+    Vue.filter('newTime',function (data) {
+        var dt=new Date(data)
+        var y=dt.getFullYear()
+        var m=dt.getMonth()+1
+        var d=dt.getDate()
+        return `${y}-${m}-${d}`
+    })
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            list:[
+                {id:1,name:'姚辉',ctime:new Date()},
+                {id:2,name:'孙西文',ctime:new Date()},
+                {id:3,name:'胡娟',ctime:new Date()},
+                {id:4,name:'李文骁',ctime:new Date()}
+            ],
+            id:'',
+            name:'',
+            keywords:''
+        },
+        methods:{
+            add(){
+                this.list.push({id:this.id,name:this.name,ctime:new Date()})
+                this.id=this.name=''
+            },
+            del(id){
+            var index=    this.list.findIndex( (item)=> {
+                    if (item.id==id){
+                        return true
+                    }
+                })
+                this.list.splice(index,1)
+            },
+            search(keywords){
+                var newList=[]
+                this.list.forEach( (item) => {
+                    //item.name是否包含keywords
+                    if ( item.name.indexOf(keywords)!=-1){
+                        newList.push(item)
+                    }
+                })
+                return newList
+            }
+        }
+    })
+</script>
+</body>
+
+</html>

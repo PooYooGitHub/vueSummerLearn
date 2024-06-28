@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展训练5</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model.lazy="content1" />
+        <div>{{ content1 }}</div>
+        <input v-model.number="content2" />
+        <div>{{ content2 }}</div>
+        <input v-model.trim="content3" />
+        <div>{{ content3 }}</div>
+    </div>
+    <script>
+    new Vue({
+        el: "#app",
+        data: {
+            content1: "lazy修饰符",
+            content2: "number修饰符",
+            content3: "trim修饰符"
+        }
+    });
+    </script>
+</body>
+</html>

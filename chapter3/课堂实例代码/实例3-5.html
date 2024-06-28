@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!--使用v-if进行条件判断，条件为true则显示此标签，false则不显示-->
+    <div id="app">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                seen: true
+            }
+        })
+    </script>
+</body>
+</html>

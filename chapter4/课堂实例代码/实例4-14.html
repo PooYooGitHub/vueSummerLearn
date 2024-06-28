@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>计数：{{ total }}</p>
+    <!--<mycom1 v-model="total"></mycom1>-->
+    <mycom1 @input="getTotal"></mycom1>
+</div>
+<template id="tmp1">
+        <input type="button" value="+1" @click="add">
+</template>
+<script>
+    Vue.component('mycom1',{
+        template:"#tmp1",
+        data:function () {
+            return{
+                counter:0
+            }
+        },
+        methods:{
+            add(){
+                this.counter++;
+                this.$emit('input',this.counter)
+            }
+        }
+    })
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            total:0
+        },
+        methods:{
+            getTotal(total){
+                this.total=total
+            }
+        }
+    })
+</script>
+</body>
+</html>

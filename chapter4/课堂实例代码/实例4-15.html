@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ parentmsg }}</p>
+    <mycom1 v-model="parentmsg"></mycom1>
+</div>
+<template id="tmp1">
+    <div>
+        子组件输入框：<input type="text" :value="value" @input="com1send">
+    </div>
+</template>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            parentmsg:'父组件msg值'
+        },
+        methods:{},
+        components:{
+            mycom1:{
+                template:'#tmp1',
+                props:['value'],
+                methods:{
+                    com1send(ev){
+                        this.$emit('input',ev.target.value);
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

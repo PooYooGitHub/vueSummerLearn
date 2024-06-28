@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <vmcom1></vmcom1>
+</div>
+
+<template id="tmp1">
+    <div>
+        <h3>我是vm实例对象的私有组件tmp1</h3>
+    </div>
+</template>
+
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{},
+        methods:{},
+        components:{
+            //创建局部组件，组件名称为vmcom1
+            vmcom1:{
+                template:'#tmp1'
+            }
+        }
+    })
+</script>
+</body>
+</html>

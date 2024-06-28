@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <a href="" @click.prevent="comName='login'">登录</a>
+    <a href="" @click.prevent="comName='reg'">注册</a>
+    <component :is="comName"></component>
+</div>
+<!--登录组件-->
+<template id="login">
+    <div style="width: 300px;height: 200px;border: 1px solid #ccc;text-align: center">
+        <h3>登录</h3>
+        <p>用户名：<input type="text" name="username"></p>
+        <p>密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password"></p>
+        <p><input type="button" value="登录"></p>
+    </div>
+</template>
+<!--注册组件-->
+<template id="reg">
+    <div style="width: 300px;height: 200px;border: 1px solid #ccc;text-align: center">
+        <h3>注册</h3>
+        <p>手机号：<input type="text" name="username"></p>
+        <p>密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password"></p>
+        <p>用户名：<input type="text" name="username"></p>
+        <p><input type="button" value="注册"></p>
+    </div>
+</template>
+<script>
+    Vue.component('login',{
+        template:'#login'
+    })
+    Vue.component('reg',{
+        template:'#reg'
+    })
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            comName:'login'
+        }
+    })
+</script>
+</body>
+</html>

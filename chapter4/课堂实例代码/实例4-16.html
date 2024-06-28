@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <mycom1></mycom1>
+    <mycom2></mycom2>
+</div>
+<script>
+    //bus:中央事件总线
+    var bus =new Vue()
+    var vm=new Vue({
+        el:'#app',
+        data:{ },
+        methods:{},
+        components:{
+            mycom1:{
+                //单击这个com1按钮，发送指定内容给mycom2
+                template:'<div><p>我是组件mycom1</p><input type="button" value="com1按钮" @click="send"></div>',
+                methods:{
+                    send(){
+                        //发送指定内容给mycom2
+                        //触发fromcom1事件属性，自定义的
+                        bus.$emit('fromcom1','你好，我是mycom1')
+                    }
+                }
+            },
+            mycom2:{
+                template:'<div><p>我是组件mycom2</p></div>',
+                mounted(){
+                    //$on()：绑定fromcom1事件属性
+                    //value是接收参数的自定义变量
+                    bus.$on('fromcom1',function (value) {
+                       alert(value)
+                    })
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

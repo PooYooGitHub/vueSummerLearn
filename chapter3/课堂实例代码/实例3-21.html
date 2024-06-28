@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用钩子函数的自定义指令</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-mycolor="color" id="demo">
+            {{num}}
+        </div>
+        <div>
+            <button @click="add">Add</button>
+        </div>
+    </div>
+    <script>
+    Vue.directive('mycolor',
+        {
+            bind:function(){
+                console.log('1-被绑定时调用bind');
+            },
+            inserted:function(el, binding, vnode){
+                alert('绑定到节点时调用inserted');
+                console.log('2-绑定到节点时调用inserted');
+                el.style='color:'+binding.value;
+            },
+            update:function(el, binding, vnode){
+                alert('3-组件更新时调用update');
+                console.log('3-组件更新时调用update');
+                el.style='color:green';
+            },
+            componentUpdated:function(){//组件更新完成
+                console.log('4-组件更新完成时调用componentUpdated');
+            },
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            num:10,
+            color:'red'
+            },
+            methods:{
+            add:function(){
+                this.num++;
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for循环对象</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(value,key,index) of apple" :key="index">
+                属性索引：{{index}}---属性名：{{key}}---属性值：{{value}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:"#app", 
+            data:{
+                apple :
+                    { name:"苹果",color:"红色"}                
+            }
+        })
+    </script>
+</body>
+</html>

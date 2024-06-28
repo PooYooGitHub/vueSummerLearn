@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <mycom1>
+        <h4 slot="header">标题</h4>
+        <p>正文内容</p><span>正文更多信息</span>
+        <div slot="footer">底部信息</div>
+        <div>版权</div>
+        <div>{{msg}}</div>
+    </mycom1>
+</div>
+<script>
+    Vue.component('mycom1',{
+        template:`
+        <div>
+           <h3>这是mycom1组件</h3>
+           <slot  name="header"></slot>
+           <slot></slot>
+            <slot  name="footer"></slot>
+        </div>
+        `
+    })
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'父组件'
+        }
+    })
+</script>
+</body>
+</html>

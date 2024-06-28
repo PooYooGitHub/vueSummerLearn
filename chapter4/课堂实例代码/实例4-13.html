@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--通过事件的绑定机制，自定义事件属性:myfunc-->
+    <mycom1 @myfunc="print"></mycom1>
+    <p>子组件传递过来的name:{{ namefromson}}</p>
+    <p>子组件传递过来的age:{{ agefromson}}</p>
+</div>
+<template id="tmp1">
+    <div>
+        <h3>子组件标题</h3>
+        <!--单击子组件按钮，调用父组件的print()-->
+        <input type="button" value="子组件按钮" @click="childprint">
+    </div>
+</template>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            namefromson:'',
+            agefromson:''
+        },
+        methods:{
+            print(name,age){
+                alert('执行了父组件的print方法'+'name:'+name+",age:"+age)
+                this.namefromson=name
+                this.agefromson=age
+            }
+        },
+        components:{
+            mycom1:{
+                template:'#tmp1',
+                data:function () {
+                    return{
+                        name:'levi',
+                        age:18
+                    }
+                },
+                methods:{
+                    childprint(){
+                        // 通过$emit拿到父组件传递过来的方法，并且调用这个方法
+                        this.$emit('myfunc',this.name,this.age)
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

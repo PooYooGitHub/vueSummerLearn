@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if和v-show的比较</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-show="seenShow">v-show：true</h1>
+        <h1 v-show="notSeenShow">v-show：false</h1>
+        <h1 v-if="seenIf">v-if：true</h1>
+        <h1 v-if="notSeenIf">v-if：false</h1>
+    </div>
+    <script>
+    new Vue({
+      el: '#app',
+      data: {
+        seenShow: true,
+        notSeenShow: false,
+        seenIf: true,
+        notSeenIf: false
+      }
+    })
+    </script>
+</body>
+</html>

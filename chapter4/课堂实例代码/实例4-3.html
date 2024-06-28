@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+<mycom></mycom>
+</div>
+<!-- 在 被控制的 #app 外面,使用 template 元素,定义组件的HTML模板结构  -->
+<template id="tmp1">
+    <div>
+        <h3>这是通过template标签创建出来的组件</h3>
+        <p>我是组件正文</p>
+    </div>
+</template>
+<script>
+    Vue.component('mycom',{
+        template:"#tmp1"
+    })
+    var vm=new Vue({el:'#app'})
+</script>
+</body>
+</html>

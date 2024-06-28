@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+    <style>
+        .compare{
+            margin: 0 auto;
+            width: 500px;
+            border: 2px solid black;
+        }
+        .result{
+            margin: 0 auto;
+            width: 500px;
+            color: red;
+        }
+        ul{
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+   <div id="app">
+       <div class="compare">
+           <ul>
+               <li>请输入第1个数：<input type="text" v-model="num1"></li>
+               <li>请输入第2个数：<input type="text" v-model="num2"></li>
+               <li>比较大小：<input type="button" value="比较" @click="compare()"></li>
+           </ul>
+           <div class="result">
+               比较的结果：{{result}}
+           </div>
+       </div>
+   </div>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                num1:"",
+                num2:"",
+                result:""
+            },
+            methods:{
+                compare:function(){
+                    if(!this.num1||!this.num2){
+                        this.result="不能为空";
+                    }else{
+                        this.result=parseInt(this.num1)==parseInt(this.num2)?
+                                "两个数相等":parseInt(this.num1)>parseInt(this.num2)?
+                                "第1个数大于第2个数":"第1个数小于第2个数";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

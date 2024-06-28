@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    千米：<input type="text" v-model="kilometers">
+     米： <input type="text" v-model="meters">
+    <p id="info"></p>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            kilometers: 0,
+            meters:0
+        },
+        watch:{
+            //监听kilometers数据
+            kilometers:function(val){
+                 this.kilometers=val;
+                 this.meters=this.kilometers*1000;
+               },
+            //监听meters数据
+            meters:function(val){
+                 this.meters=val;
+                 this.kilometers=val/1000;
+               }
+         }
+    });
+    //$watch是Vue.js的API提供的一个方法，用来监听变量kilometers的数据变化
+    app.$watch("kilometers",function(newVal,oldVal){
+        document.getElementById("info").innerHTML="修改前："+oldVal+",修改后："+newVal;
+    });
+</script>
+</body>
+</html>

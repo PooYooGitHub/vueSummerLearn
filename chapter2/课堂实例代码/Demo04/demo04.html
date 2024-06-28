@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <!--使用x-template定义模板 -->
+    <script type="text/x-template" id="temp">
+        <h1>Hello Template</h1>
+    </script>
+    <!--引用x-template模板 -->
+    <script>
+        var app=new Vue({
+            el: "#app",
+            template:"#temp"
+        })
+    </script>
+</body>
+</html>

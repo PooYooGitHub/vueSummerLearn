@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+</head>
+<body>
+     <p>单击按钮修改文本</p>
+     <div id="app">
+         <p>{{msg}}</p>
+         <button @click="doChange">请单击</button>
+     </div>
+         <script>
+             var app=new Vue({
+                el: "#app",
+                data:{
+                    msg: "初始文本！"
+                 },
+                methods:{
+                  doChange:function(){	
+				   this.msg ="新的文本!"  //改变data中msg属性的值
+             }
+                 }
+             })
+         </script>
+</body>
+</html>

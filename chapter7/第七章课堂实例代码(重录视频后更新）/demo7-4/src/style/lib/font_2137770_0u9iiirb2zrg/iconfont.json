@@ -1,0 +1,51 @@
+{
+  "id": "2137770",
+  "name": "xm",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5778898",
+      "name": "message",
+      "font_class": "message",
+      "unicode": "e713",
+      "unicode_decimal": 59155
+    },
+    {
+      "icon_id": "34375",
+      "name": "location",
+      "font_class": "icon09",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "2534121",
+      "name": "7",
+      "font_class": "icon-test",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "8939159",
+      "name": "gift",
+      "font_class": "gift",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "10603351",
+      "name": "tool",
+      "font_class": "tool",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14140114",
+      "name": "15",
+      "font_class": "15",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}

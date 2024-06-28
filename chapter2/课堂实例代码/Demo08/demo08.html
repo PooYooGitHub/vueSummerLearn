@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <label for="agreement">
+        <input type="checkbox" name="" id="agreement" v-model="isagree">同意协议
+    </label>
+    <h2>你的选择是：{{isagree}}</h2>
+    <button :disabled="!isagree">下一步</button>
+</div>
+<script>
+    var app= new Vue({
+        el: "#app",
+        data: {
+            isagree:false
+        }
+    });
+</script>
+</body>
+</html>

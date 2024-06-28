@@ -1,0 +1,17 @@
+{
+  "sites" :
+  [
+      {
+        "name":"淘宝" ,
+        "url":"www.taobao.com"
+      },
+      {
+        "name":"google" ,
+        "url":"www.google.com"
+      },
+      {
+        "name":"微博" ,
+        "url":"www.weibo.com"
+      }
+  ]
+}

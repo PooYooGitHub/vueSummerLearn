@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{regist}}</p>
+</div>
+<script>
+    var app=new Vue({
+        el: document.getElementById("app"), // 或者是"#app"
+        data:{
+           regist: "注册页面！"
+        }
+    })
+</script>
+</body>
+</html>

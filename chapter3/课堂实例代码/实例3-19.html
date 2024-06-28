@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model的trim修饰符使用</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model.trim="content" />
+        <div>输入内容："{{ content }}"</div>
+    </div>
+    <script>
+    new Vue({
+        el: "#app",
+        data: {
+            content: "content",
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+</head>
+<body>
+     <div id="app">{{date}}</div>
+         <script>
+             var app=new Vue({
+                el: "#app", //挂载id为app的DOM节点
+                data:{
+                    date: new Date()  //获取系统时间
+                 },
+                 mounted:function(){ //mounted钩子函数，在模板渲染成HTML后调用
+                     var _this=this;
+                     this.timer=setInterval(function(){ //间隔1秒重新获取系统时间
+                         _this.date=new Date();
+                     },1000);
+                 }
+             })
+         </script>
+</body>
+</html>

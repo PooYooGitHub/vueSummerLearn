@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for循环对象数组</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) of fruit" :key="index">
+                索引值index：{{index}}---
+                每一项name：{{item.name}}---
+                每一项color：{{item.color}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:"#app", //绑定了root这个元素
+            data:{
+                fruit :[
+                    { name:"苹果",color:"红色"},
+                    { name:"梨子",color:"黄色"},
+                    { name:"橘子",color:"橘色"},
+                    { name:"西瓜",color:"绿色"},
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

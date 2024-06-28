@@ -1,0 +1,439 @@
+
+        .site-header{
+            font-size: 12px;
+            border-bottom: 2px solid #ff6700;
+            background: #fff;
+            height: 100px;
+            position: relative;
+            z-index: 20;
+        }
+        .head-title{
+            height: 48px;
+            float: left;
+            margin-top: 20px;
+        }
+        .head-title h2{
+            font-size: 28px;
+            font-weight: 400;
+            color: #424242;
+            line-height: 48px;
+            margin-top: 0;
+            float: left;
+        }
+        .head-title p{
+            float: left;
+            height: 20px;
+            line-height: 20px;
+            margin-top: 20px;
+            margin-left: 15px;
+            color: #757575;
+        }
+        .topbar-info{
+            position: relative;
+            float: right;
+            height: 40px;
+            line-height: 40px;
+            margin-top: 30px;
+        }
+        .topbar-info .user{
+            float: left;
+        }
+        .topbar-info .user .user-name{
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        .topbar-info .user .user-name .name{
+            display: inline-block;
+            width: auto;
+            max-width: 75px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            vertical-align: text-bottom;
+            overflow: hidden;
+        }
+        .topbar-info .user .user-name:hover{
+            color: #ff6700;
+        }
+        .topbar-info .user .user-name i{
+            font-size: 14px;
+            line-height: 14px;
+            vertical-align: 12px;
+        }
+        .topbar-info .user .user-menu-wrapper .user-menu{
+            width: 110px;
+            margin: 0;
+            padding: 7px 0;
+            text-align: center;
+        }
+        .topbar-info .user .user-menu-wrapper{
+            position: absolute;
+            left: 0;
+            top: 40px;
+            z-index: 3;
+            height: 0;
+            overflow: hidden;
+            transition: all .3s;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+        }
+        .topbar-info .user .user-name:hover+.user-menu-wrapper,
+        .topbar-info .user .user-menu-wrapper:hover{
+            height: 168px;
+        }
+        .user-menu-wrapper .user-menu li{
+            height: 30px;
+            line-height: 30px;
+        }
+        .user-menu-wrapper .user-menu li:hover{
+            background-color: #F5F5F5;
+        }
+        .user-menu-wrapper .user-menu li a:hover{
+            color: #ff6700;
+        }
+        .page-main,body{
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container-main .item-list{
+            background-color: #fff;
+        }
+        .container-main .item-list .list-head{
+            height: 70px;
+            line-height: 70px;
+            padding-right: 0px;
+            color: #424242;
+        }
+        .container-main .item-list .list-head .item{
+            float: left;
+            padding: 0;
+        }
+        .container-main .item-list .list-head .item-check input,.col-check input{
+            display: inline-block;
+            position: relative;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            margin-left: 24px;
+            margin-right: 15px;
+        }
+        .container-main .item-list .list-head .item-check{
+            width: 230px;
+        }
+        .container-main .item-list .list-head .item-name{
+            width: 380px;
+        }
+        .container-main .item-list .list-head .item-price{
+            width: 140px;
+            /* padding-right: 18px; */
+            text-align: center;
+            color: #424242;
+            padding: 0;
+            border: 0px;
+        }
+        .container-main .item-list .list-head .item-num{
+            width: 150px;
+            text-align: center;
+            color: #424242;
+            padding: 0;
+        }
+        .container-main .item-list .list-head .item-total{
+            width: 350px;
+            /* padding-right: 81px; */
+            /* text-align: right; */
+            text-align: center;
+            padding: 0;
+            border: 0px;
+        }
+        .container-main .item-list .list-head .item-action{
+            width: 50px;
+            text-align: center;
+        }
+        .goods-body .goods-list .goods-box{
+            /* width: 100%; */
+            padding: 15px 0;
+            /* background-color: red; */
+            border-top: 1px solid #e0e0e0;
+            
+        }
+        .goods-body .goods-list .goods-box .col{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .goods-body .goods-list .goods-box .col-check{
+            width: 110px;
+        }
+        .goods-body .goods-list .goods-box .col-img{
+            width: 80px;
+            height: 80px;
+            padding-right: 40px;
+            overflow: hidden;
+        }
+        .goods-body .goods-list .goods-box .col-name{
+            width: 380px;
+        }
+        .goods-body .goods-list .goods-box .col-name .name{
+            width: 380px;
+            margin: 8px 0;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .goods-body .goods-list .goods-box .col-price{
+            width: 140px;
+            padding-right: 18px;
+            text-align: center;
+            font-size: 16px;
+            color: #424242;
+        }
+        .goods-body .goods-list .goods-box .col-num{
+            width: 150px;
+            text-align: center;
+            font-size: 16px;
+            color: #424242;
+        }
+        .goods-body .goods-list .goods-box .col-num .change-goods-num{
+            width: 148px;
+            height: 38px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            background-color: #fff;
+            position: relative;
+        }
+        .goods-body .goods-list .goods-box .col-num .change-goods-num a{
+            float: left;
+            height: 38px;
+            width: 38px;
+            line-height: 38px;
+            color: #757575;
+            font-size: 20px;
+        }
+        .goods-body .goods-list .goods-box .col-num .change-goods-num input{
+            float: left;
+            width: 70px;
+            height: 36px;
+            line-height: 36px;
+            padding: 0;
+            border-width: 0;
+            color: #424242;
+            font-size: 16px;
+            text-align: center;
+        }
+        .goods-body .goods-list .goods-box  .col-total{
+            color: #ff6700;
+            font-size: 16px;
+            width: 200px;
+            padding-right: 81px;
+            text-align: right;
+        }
+        .goods-body .goods-list .goods-box  .col-action{
+            width: 180px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+      
+          .goods-body .goods-list .goods-box  .col-action button {
+            border: 0;
+            background: coral;
+            color: #fff;
+            padding: 4px 5px;
+          }
+        .cart-bar{
+            margin-top: 20px;
+            height: 50px;
+            text-align: left;
+            background: #fff;
+            position: relative;
+        }
+        .cart-bar .section-left{
+            float: left;
+        }
+        .cart-bar .section-left .back-shopping{
+            line-height: 50px;
+            margin-left: 32px;
+            color: #757575;
+        }
+        .cart-bar .section-left .cart-total{
+            margin-left: 16px;
+            padding-left: 16px;
+            border-left: 1px solid #eee;
+            color: #757575;
+        }
+        .cart-bar .section-left .cart-total i{
+            color: #ff6700;
+            font-style: normal;
+        }
+        .cart-bar .total-price{
+            float: right;
+            padding-left: 14px;
+            color: #ff6700;
+        }
+        .cart-bar .total-price em{
+            font-style: normal;
+            font-size: 30px;
+        }
+        .cart-bar .total-price .btn-a{
+            display: inline-block;
+            width: 200px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            font-size: 18px;
+            margin-left: 50px;
+            vertical-align: top;
+            background-color: #e0e0e0;
+            border: 1px solid #e0e0e0;
+        }
+        .cart-recommend{
+            margin-top: 60px;
+        }
+        .cart-recommend .recommend-title{
+            position: relative;
+            height: 50px;
+            font-size: 30px;
+            font-weight: 400;
+            color: #757575;
+            border-top: 1px solid #e0e0e0;
+        }
+        .cart-recommend .recommend-title span{
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 372px;
+            height: 40px;
+            width: 482px;
+            line-height: 40px;
+            text-align: center;
+            background: #f5f5f5;
+        }
+        .cart-recommend .recommend-sp .recommend-list{
+            margin: 0 0 0 -14px;
+            padding: 0;
+        }
+        .cart-recommend .recommend-sp .recommend-list .recommend-item{
+            float: left;
+            width: 234px;
+            height: 300px;
+            margin: 0 0 14px 14px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            text-align: center;
+        }
+        .cart-recommend .recommend-sp .recommend-list .recommend-item img{
+            display: block;
+            margin: 40px auto 20px;
+            width: 140px;
+            height: 140px;
+            border: 0;
+        }
+        .cart-recommend .recommend-sp .recommend-list .recommend-item .recommend-name{
+            margin: 0 10px 10px;
+            height: 18px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #333;
+        }
+        .cart-recommend .recommend-sp .recommend-list .recommend-item .recommend-price{
+            margin-top: 10px;
+            color: #ff6700;
+        }
+        .cart-recommend .recommend-sp .recommend-list .recommend-item .recommend-tips{
+            position: relative;
+            color: #757575;
+        }
+        .recommend-action{
+            position: absolute;
+            left: 25%;
+            bottom: -87px;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .recommend-action .btn{
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            height: 28px;
+            width: 120px;
+            font-size: 12px;
+            line-height: 28px;
+            border: 1px solid #ff6700;
+            color: #ff6700;
+            background-color: #fff;
+            transition: all 0.5s;
+        }
+        .cart-recommend .recommend-sp .recommend-list .recommend-item:hover .recommend-action{
+            
+            position: absolute;
+            left: 25%;
+            bottom: 20px;
+            width: 100%;
+            opacity: 1;
+        } 
+        .recommend-action .btn:hover{
+            color: #fff;
+            background: #f25807;
+            border-color: #f25807;
+        }
+
+        .item {
+            border-bottom: 1px dashed #ccc;
+            padding: 0px;
+          }
+          .item::after {
+            content: "";
+            display: block;
+            clear: both;
+          }
+          .item-l {
+            float: left;
+            font-size: 0;
+          }
+          .item-r {
+            float: left;
+            padding-left: 20px;
+          }
+          .item-img {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+          }
+          .item-title {
+            font-size: 14px;
+            margin-top: 10px;
+          }
+          .item-price {
+            margin-top: 10px;
+            color: #f00;
+            font-size: 15px;
+          }
+          .item-opt {
+            margin-top: 10px;
+          }
+          .item-opt button {
+            border: 0;
+            background: coral;
+            color: #fff;
+            padding: 4px 5px;
+            cursor: pointer;
+          }
+
+        .item-empty {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        

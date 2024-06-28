@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+     <mycom2 :width="msg"></mycom2>
+</div>
+<script>
+     //props作为需要被转变的原始值传入，可利用计算属性
+     Vue.component('mycom2',{
+        template:"<div :style='childwidth' style='border: 1px solid black'>我是子组件mycom2</div>",
+        props:['width'],
+        computed:{
+            childwidth:function () {
+                return {
+                    width:this.width+'px' //width:200px
+                }
+            }
+        }
+      })
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:200
+        }
+    })
+</script>
+</body>
+</html>

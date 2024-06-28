@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--利用自定义的属性绑定-->
+    <mycom1 parent-msg="这是来自父组件的msg"></mycom1>
+</div>
+<script>
+    Vue.component('mycom1',{
+        //props中的数据和data函数中return的数据主要的区别：
+        //props中的数据都来自父级，data中数据是组件自身的
+        props:['parentMsg'],
+        template:'<div>{{ parentMsg }} <p>{{childmsg }}</p> </div>',
+        data(){
+            return {
+                childmsg:'这是子组件自定义的数据'
+            }
+        }
+    })
+    var vm=new Vue({
+        el:'#app',
+        data:{ },
+        methods:{}
+    })
+</script>
+</body>
+</html>

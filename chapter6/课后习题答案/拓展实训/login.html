@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="vue-router.js"></script>
+
+</head>
+<body>
+
+<template id="account">
+    <div>
+
+        <div>
+            <a href="#" @click="componentName='login'">登录</a>
+            <a href="#" @click="componentName='register'">注册</a>
+        </div>
+       <hr>
+        <component :is="componentName"></component>
+    </div>
+
+</template>
+
+
+<div id="app">
+    <account></account>
+</div>
+</body>
+<script type="text/javascript">
+    Vue.component('account',{
+        template:　'#account',
+        data: function(){
+
+            return {
+
+                componentName: 'login' /*默认显示的登录组件*/
+            }
+        },
+        components: {
+
+            'login': {
+
+                template: '<div><h2>登录页</h2><br>用&nbsp;户&nbsp;名&nbsp;：<input type="text"><br>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;：<input type="text"><br></div>'
+            },
+
+            'register': {
+
+                template: '<div><h2>注册页</h2><br>用&nbsp;户&nbsp;名&nbsp;：<input type="text"><br>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;：<input type="text"><br>确认密码：<input type="text"></div>'
+            }
+        }
+
+    })
+
+    new Vue({
+
+        el: '#app'
+    })
+
+</script>
+</html>

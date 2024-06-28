@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展训练2</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if = " score>=80 ">优秀</p>
+        <p v-else-if = " score>=60&&score<80 ">良好</p>
+        <p v-else = "">不合格</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                score: 100
+            }
+        })
+    </script>
+</body>
+</html>

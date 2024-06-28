@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展训练1</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) of education" :key="index">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:"#app", 
+            data:{
+                education :["小学","初中","高中","大学"]
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局部过滤器</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>电脑价格：{{price | addPriceIcon}}</p>
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            price:200
+        },
+        filters:{
+            //处理函数
+            addPriceIcon(value){
+                console.log(value)//200
+                return '¥' + value
+            }
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <mycom1 :parentmsg="msg"></mycom1>
+</div>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'父组件的msg'
+        },
+        components:{
+            mycom1:{
+                template:"<div>{{ parentmsg }}---{{ sonfromparent }}</div>",
+                props:['parentmsg'],
+                data:function () {
+                    return{
+                        sonfromparent:this.parentmsg
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
