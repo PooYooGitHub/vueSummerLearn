@@ -14,6 +14,14 @@
                 data:{
                     date: new Date()  //获取系统时间
                  },
+				computed: {
+				                 formattedDate: function() {
+				                     const year = this.date.getFullYear();
+				                     const month = String(this.date.getMonth() + 1).padStart(2, '0');
+				                     const day = String(this.date.getDate()).padStart(2, '0');
+				                     return `${year}年${month}月${day}日`;
+				                 }
+				             },
                  mounted:function(){ //mounted钩子函数，在模板渲染成HTML后调用
                      var _this=this;
                      this.timer=setInterval(function(){ //间隔1秒重新获取系统时间
